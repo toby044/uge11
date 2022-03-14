@@ -1,0 +1,5 @@
+Hvad skal laves?
+    ER Diagram
+        MongoDB -> Mongoose skemaer
+        Indtast quiz med et par spørgsmål
+        
