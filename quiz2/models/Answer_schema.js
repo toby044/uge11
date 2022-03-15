@@ -1,24 +1,28 @@
 const mongoose = require("mongoose");
 const autopopulate = require('mongoose-autopopulate');
 
-
 const answer_schema = mongoose.Schema({
-    id_answer: {
-        type: Number,
-        required: true,
-        unique: true
-    },
-    name: {
+    answer1: {
         type: String,
         required: true
     },
-
-    correct_answer: {
+    answer2: {
+        type: String,
+        required: true
+    },
+    answer3: {
+        type: String,
+        required: true
+    },
+    answer4: {
+        type: String,
+        required: true
+    },
+    correct: {
         type: Boolean,
         required: true
     },
-
-    quiz: {
+    question: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Question_schema',
         required: true,
@@ -26,4 +30,5 @@ const answer_schema = mongoose.Schema({
     }
 });
 
+answer_schema.plugin(autopopulate);
 module.exports = mongoose.model("Answer", answer_schema, "answer");

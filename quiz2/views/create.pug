@@ -3,31 +3,25 @@ extends layout
 block content
   h1= title
   br
-  form(action="/", method="POST", class="createForm")
+  form(action="create", method="POST", class="createForm")
     div
-      <label for="title">Insert quiz title
-      <input type="text" name="title">
+      <label for="title">Insert Quiz title
+      <input type="text" name="quizTitle">
     br
     div
-      <label for="question1">Question 1
-      <input type="text" name="question1">
-      <label for="question1">Insert question answers
-    div
-      <input type="text" name="answer1.1">
-      <input type="text" name="answer1.2">
-      <input type="text" name="answer1.3">
-      <input type="text" name="answer1.4">
+      <label for="title">Insert Quiz description
+      <input type="text" name="quizDescription">
     br
-    div 
-      <label for="question2">Question 2
-      <input type="text" name="question2">
-      
     div
-      <label for="question1">Insert question answers  
-      <input type="text" name="answer2.1">
-      <input type="text" name="answer2.2">
-      <input type="text" name="answer2.3">
-      <input type="text" name="answer2.4">
+      <label for="question">Question
+      <input type="text" name="question">
+    br
+    div
+      <label for="answer1">Insert question answers
+      <input type="text" name="answer1">
+      <input type="text" name="answer2">
+      <input type="text" name="answer3">
+      <input type="text" name="answer4">
     br
     <input type="submit" name="submit" value="Create Quiz">
 

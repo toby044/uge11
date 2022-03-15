@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const controller = require('../controllers/controller');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -21,5 +22,16 @@ router.get('/show', function(req, res, next) {
 router.get('/try', function(req, res, next) {
   res.render('try', { title: 'Try Quiz' });
 });
+
+
+/* POST Quiz */
+router.post('/create', async function(req, res, next) {
+  await controller.postQuiz(req,res,next);
+  await controller.postQuestion(req,res,next);
+  // await controller.postAnswer(req, res, next);
+  res.redirect('/show');
+});
+
+
 
 module.exports = router;

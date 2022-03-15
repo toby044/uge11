@@ -1,16 +1,14 @@
 const mongoose = require("mongoose");
 
 const quiz_schema = mongoose.Schema({
-    id_quiz: {
-        type: Number,
-        required: true,
-        unique: true
-    },
-    name: {
+    title: {
         type: String,
-        rquired: true,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: false,
     }
-
 });
 
 module.exports = mongoose.model("Quiz", quiz_schema, "quiz");
