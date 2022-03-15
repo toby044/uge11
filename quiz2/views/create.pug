@@ -2,35 +2,32 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
   br
   form(action="/", method="POST", class="createForm")
-    <label for="title">Insert title
+    div
+      <label for="title">Insert quiz title
+      <input type="text" name="title">
     br
-    <input type="text" name="title">
-    p
+    div
       <label for="question1">Question 1
-      br
       <input type="text" name="question1">
-    p
       <label for="question1">Insert question answers
-      br
+    div
       <input type="text" name="answer1.1">
       <input type="text" name="answer1.2">
       <input type="text" name="answer1.3">
       <input type="text" name="answer1.4">
     br
-    p
-      <label for="question1">Question 2
-      br
+    div 
+      <label for="question2">Question 2
       <input type="text" name="question2">
-    p
-      <label for="question1">Insert question answers
-      br
+      
+    div
+      <label for="question1">Insert question answers  
       <input type="text" name="answer2.1">
       <input type="text" name="answer2.2">
       <input type="text" name="answer2.3">
       <input type="text" name="answer2.4">
-    br  
-    input(type="submit" name="submit")
+    br
+    <input type="submit" name="submit" value="Create Quiz">
 
