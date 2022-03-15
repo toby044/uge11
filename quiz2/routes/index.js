@@ -25,10 +25,10 @@ router.get('/try', function(req, res, next) {
 
 
 /* POST Quiz */
-router.post('/create', async function(req, res, next) {
-  await controller.postQuiz(req,res,next);
-  await controller.postQuestion(req,res,next);
-  // await controller.postAnswer(req, res, next);
+router.post('/create', function(req, res, next) {
+  controller.postQuiz(req,res,next);
+  controller.postQuestion(req,res,next);
+  controller.postAnswer(req, res, next);
   res.redirect('/show');
 });
 
