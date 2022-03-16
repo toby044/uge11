@@ -3,7 +3,7 @@ const autopopulate = require('mongoose-autopopulate');
 
 
 const answer_schema = mongoose.Schema({
-    answer: {
+    answers: {
         type: Array,
         required: true
     },
@@ -23,10 +23,10 @@ const answer_schema = mongoose.Schema({
     //     type: String,
     //     required: true
     // },
-    correct: {
-        type: Boolean,
-        required: true
-    },
+    // correct: {
+    //     type: Boolean,
+    //     required: true
+    // },
     // question: {
     //     type: mongoose.Schema.Types.ObjectId,
     //     ref: 'Question_schema',

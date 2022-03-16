@@ -37,12 +37,13 @@ module.exports = {
     postAnswer: async function (req) {
         const db = await mongoUtil.mongoConnect();
         const answer = new Answer ({
-            answer: [req.body.answer1, req.body.answer2, req.body.answer3, req.body.answer4],
+            answers: [{answer: req.body.answer1, correct: false}, {answer: req.body.answer2, correct: true},
+                 {answer: req.body.answer3, correct: false}, {answer: req.body.answer4, correct: false}],
+            // answer: [req.body.answer1, req.body.answer2, req.body.answer3, req.body.answer4],
             // answer1: req.body.answer1,
             // answer2: req.body.answer2,
             // answer3: req.body.answer3,
             // answer4: req.body.answer4,
-            correct: false,
         });
 
         Answer.create(answer, function(error) {
