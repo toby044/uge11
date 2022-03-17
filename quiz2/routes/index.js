@@ -23,18 +23,20 @@ router.get("/try", function (req, res, next) {
 });
 
 /* POST Quiz */
-router.post("/create", function (req, res, next) {
-  controller.postQuiz(req, res, next);
-  controller.postQuestion(req, res, next);
-  controller.postAnswer(req, res, next);
+router.post("/create", async function (req, res, next) {
+  let q = await controller.postQuiz(req);
+  let qq = await controller.postQuestion(req, q._id);
+  let a = await controller.postAnswer(req, qq._id);
   res.redirect('/create');
 });
 
 /* GET Show quiz pag */
 router.get("/show", async function (req, res, next) {
   let quizzes = await controller.getQuiz({}, { sort: { title: 1 } });
-  let questions = await controller.getQuestion({}, { sort: { title: 1 } });
+  let questions = await controller.getQuestion({_id:quizzes._id}, { sort: { title: 1 } });
+
   let answers = await controller.getAnswer({}, { sort: { answers: 1 } });
+
   res.render("show", {
     title: "Show Quiz",
     quizzes,

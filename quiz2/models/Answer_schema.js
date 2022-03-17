@@ -5,11 +5,11 @@ const answer_schema = mongoose.Schema({
         type: Array,
         required: true
     },
-    // question: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Question',
-    //     required: true,
-    // }
+    question: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Question',
+        required: true,
+    }
 });
 
 module.exports = mongoose.model("Answer", answer_schema, "answer");
