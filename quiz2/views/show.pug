@@ -8,14 +8,15 @@ block content
       div.quiz-description-container
           h3 #{quiz.title}
           p #{quiz.description}
-      //- div.quiz-question-container
-      //-   each question in questions
-      //-     h4 #{question.title}
-      //- div.quiz-answer-container
-      //-   each answer in answers
-      //-     - for(let i = 0; i<=3; i++){
-      //-       p #{answer.answers[i].answer}
-      //-     - }
+      div.quiz-question-container
+        each question in questions
+          h4 #{question.title}
+      div.quiz-answer-container
+        each answer in answers
+          p #{answer.answers[0].answer}
+          //- p #{answer.answers[1].answer}
+          //- p #{answer.answers[2].answer}
+          //- p #{answer.answers[3].answer}
 
 
 

@@ -57,11 +57,6 @@ module.exports = {
         { answer: req.body.answer3, correct: req.body.checked3 },
         { answer: req.body.answer4, correct: req.body.checked4 },
       ],
-      // answer: [req.body.answer1, req.body.answer2, req.body.answer3, req.body.answer4],
-      // answer1: req.body.answer1,
-      // answer2: req.body.answer2,
-      // answer3: req.body.answer3,
-      // answer4: req.body.answer4,
     });
 
     Answer.create(answer, function (error) {
