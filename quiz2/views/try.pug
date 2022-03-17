@@ -2,20 +2,25 @@ extends layout
 
 block content
   h1= title
+    h2 Choose a quiz
+    form(id='tryQuiz' action='/try' method='post')
+        div
+            select(id="select" name='quizzes')
+                option Select Quiz
+                each quiz in quizzes
+                    option(value=quiz._id name="select") #{quiz.title}
+        p
+          input(type='submit' value='Start Quiz')
+    div.description
 
-    //- table
-    //-   tr
-    //-     th Title
-    //-     th Description
-    //-   each quiz in quizzes
-    //-     tr
-    //-       td #{quiz.title}
-    //-       td #{quiz.description}
-    //-   tr
-    //-     th Question
-    //-   each question in questions
-    //-     tr
-    //-       td #{question.title}
-    //-   each answer in answers
-    //-     tr
-    //-       td #{answer.answers[0].answer}
+    div.questions
+      h3 Question
+      each question in questions
+        p #{question.title}
+    div.answers
+      h3 Answers
+      each answer in answers
+        p #{answer.answers[0].answer}
+        p #{answer.answers[1].answer}
+        p #{answer.answers[2].answer}
+        p #{answer.answers[3].answer}
