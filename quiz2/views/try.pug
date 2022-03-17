@@ -2,3 +2,20 @@ extends layout
 
 block content
   h1= title
+
+    //- table
+    //-   tr
+    //-     th Title
+    //-     th Description
+    //-   each quiz in quizzes
+    //-     tr
+    //-       td #{quiz.title}
+    //-       td #{quiz.description}
+    //-   tr
+    //-     th Question
+    //-   each question in questions
+    //-     tr
+    //-       td #{question.title}
+    //-   each answer in answers
+    //-     tr
+    //-       td #{answer.answers[0].answer}

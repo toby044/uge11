@@ -18,10 +18,18 @@ block content
     br
     div
       <label for="answer1">Insert question answers
-      <input type="text" name="answer1">
-      <input type="text" name="answer2">
-      <input type="text" name="answer3">
-      <input type="text" name="answer4">
+      div.answer-field
+       <input type="text" name="answer1">
+       <input type="checkbox" name="checked1">
+      div.answer-field
+       <input type="text" name="answer2">
+       <input type="checkbox" name="checked2">
+      div.answer-field
+       <input type="text" name="answer3">
+       <input type="checkbox" name="checked3">
+      div.answer-field
+        <input type="text" name="answer4">
+        <input type="checkbox" name="checked4">
     br
     <input type="submit" name="submit" value="Create Quiz">
 
